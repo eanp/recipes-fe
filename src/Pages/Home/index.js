@@ -5,7 +5,8 @@ export default function Home() {
   return (
     <div>
         <NavbarMenu />
-        Home
+        <h1>Home</h1>
+        <button className='btn btn-primary py-5' style={{paddingLeft:'20px',paddingRight:'20px',backgroundColor:'skyblue'}}>detail</button>
     </div>
   )
 }

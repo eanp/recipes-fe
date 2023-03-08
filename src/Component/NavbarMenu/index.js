@@ -1,18 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Navbar,Container } from 'react-bootstrap'
 
 export default function NavbarMenu() {
   return (
-    <div>
-        <li>
-        <Link to={'/'}>home</Link>
-        </li>
-        <li>
-        <Link to={'/add'}>add</Link>
-        </li>
-        <li>
-        <Link to={'/profile'}>profile</Link>
-        </li>
-    </div>
+    <Navbar bg='dark' variant='dark'>
+        <Container>
+            <Link to={'/'}>home</Link>
+            <Link to={'/add'}>add</Link>
+            <Link to={'/profile'}>profile</Link>
+        </Container>
+    </Navbar>
   )
 }
