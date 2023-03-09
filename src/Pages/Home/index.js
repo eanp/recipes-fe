@@ -4,7 +4,7 @@ import axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-let url = 'https://zealous-erin-cod.cyclic.app/recipes'
+let url = 'http://localhost:3000/recipes'
 
 export default function Home() {
   const [data,setData] = useState()
@@ -53,7 +53,7 @@ export default function Home() {
             <div key={index+1}>
               <h5>{item.title}</h5>
               <img className='img-thumbnail' src={item.photo} style={{height:"100px"}} />
-            <button className='btn btn-danger' onClick={()=>confirmDelete(index)}>
+            <button className='btn btn-danger' onClick={()=>confirmDelete(item.id)}>
               delete menu
             </button>
             </div>
