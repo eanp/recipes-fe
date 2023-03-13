@@ -2,6 +2,7 @@ import { BrowserRouter,Route,Routes,Navigate } from "react-router-dom";
 import Home from '../Pages/Home'
 import Profile from '../Pages/Profile'
 import Add from '../Pages/Add'
+import Edit from '../Pages/Edit'
 
 function App(){
     return(
@@ -11,6 +12,7 @@ function App(){
                         <Route path='/home' element={<Home/>} />
                         <Route path='/profile' element={<Profile/>} />
                         <Route path='/add' element={<Add/>} />
+                        <Route path='/edit/:id' element={<Edit/>} />
                     </Routes>
             </BrowserRouter>
     )

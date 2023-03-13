@@ -3,6 +3,7 @@ import NavbarMenu from '../../Component/NavbarMenu'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom'
 
 let url = 'http://localhost:3000/recipes'
 
@@ -13,11 +14,15 @@ export default function Home() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const navigate = useNavigate()
+  const editRecipes = (id) =>{
+    navigate(`/edit/${id}`)
+  }
+
   const confirmDelete = (id) => {
     setSelected(id)
     handleShow()
   }
-
   
   useEffect(()=>{
     getData()
@@ -55,6 +60,9 @@ export default function Home() {
               <img className='img-thumbnail' src={item.photo} style={{height:"100px"}} />
             <button className='btn btn-danger' onClick={()=>confirmDelete(item.id)}>
               delete menu
+            </button>
+            <button className='btn btn-warning' onClick={()=>editRecipes(item.id)}>
+              edit menu
             </button>
             </div>
           ))}
