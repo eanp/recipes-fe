@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom'
 
-let url = 'http://localhost:3000/recipes'
+let url = process.env.REACT_APP_BASE_URL + '/recipes'
 
 export default function Home() {
   const [data,setData] = useState()
@@ -32,7 +32,7 @@ export default function Home() {
     axios.get(url).then((res)=>{
       console.log(res)
       setData(res.data.data)
-    }).then((err)=>{
+    }).catch((err)=>{
       console.log(err)
     })
   }
